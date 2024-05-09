@@ -21,7 +21,7 @@ To set up the project, follow these steps:
 
 3. Navigate to the project directory:
    ```
-   cd main
+   cd yourrepository
    ```
 
 ## Usage
