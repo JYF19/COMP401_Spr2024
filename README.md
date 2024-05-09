@@ -21,21 +21,21 @@ To set up the project, follow these steps:
 
 3. Navigate to the project directory:
    ```
-   cd global-cooperation-barometer-analysis
+   cd main
    ```
 
 ## Usage
 
-1. Place the "WEF_The_Global_Cooperation_Barometer_2024.pdf" file in the project directory.
+1. Place the pdf document in the project directory.
 
 2. Open the main script file and update the `local_path` variable with the path to your PDF file:
    ```python
-   local_path = "WEF_The_Global_Cooperation_Barometer_2024.pdf"
+   local_path = ""
    ```
 
 3. Run the script to process the PDF, generate embeddings, and set up the retrieval system:
    ```
-   python main.py
+   python Local_RAG- Q&A_from_pdf.py
    ```
 
 4. Once the setup is complete, you can enter your question when prompted:
