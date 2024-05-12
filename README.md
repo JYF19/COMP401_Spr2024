@@ -5,6 +5,15 @@ Welcome to the PDF Content Analyzer, a Python application that utilizes natural 
 
 This project leverages the LangChain framework & the built-in libraries to facilitate document loading, text processing, embedding generation, and querying capabilities as well as open-source Large Language Models for natural human like responses.
 
+## Application Architecture
+
+Below is a diagram of the application architecture, illustrating how the components interact:
+
+![Application Architecture Overview](images/arc_sys.png)
+
+The diagram shows the workflow from loading the PDF to extracting responses based on user queries.
+
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your machine:
