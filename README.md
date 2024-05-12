@@ -48,6 +48,81 @@ Install the required Python libraries:
 pip install unstructured langchain langchain-community chromadb langchain-text-splitters
 ```
 
+## Installing Language Models
+
+This project uses the Llama and Mistral language models from the LangChain and Hugging Face ecosystems. Follow these steps to ensure these language models are properly installed and configured.
+
+### Llama Models
+
+1. **Hugging Face Account**:
+   First, if you haven't already, you need to create an account on Hugging Face to access models. You can sign up here: [Hugging Face](https://huggingface.co/join).
+
+2. **Hugging Face Transformers Library**:
+   Install the Hugging Face Transformers library, which provides the infrastructure to download and use Llama models.
+
+   ```bash
+   pip install transformers
+   ```
+
+3. **Model Setup**:
+   The Llama models can be used directly via the Transformers library. Ensure you have internet access the first time you run the model so it can download the necessary files.
+
+### Mistral Models
+
+Mistral is part of the LangChain language models. Follow these steps to set it up:
+
+1. **Install LangChain**:
+   You have already installed LangChain if you followed the initial setup instructions. If not, please run:
+
+   ```bash
+   pip install langchain
+   ```
+
+2. **Model Configuration**:
+   Mistral models are accessed via the LangChain framework. Ensure your `langchain` configuration is set to use Mistral by setting up the appropriate environment variables or configuration files as described in the LangChain documentation.
+
+### Model Integration
+
+Ensure that your application's configuration files or environment settings are pointing to the correct models. For Llama, specify the model ID when initializing it in your code. For Mistral, check the LangChain configuration.
+
+Example of initializing a model in your Python script:
+
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+# For using Llama model
+model_name = "allenai/llama"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
+
+# For using Mistral model (simplified, depends on your setup)
+from langchain.llms import Mistral
+mistral_model = Mistral()
+```
+
+### Testing the Models
+
+After installation, it's a good idea to test the models with simple scripts to ensure they are properly loaded and functioning:
+
+```python
+# Testing Llama
+input_text = "Hello, world!"
+encoded_input = tokenizer(input_text, return_tensors="pt")
+output = model.generate(**encoded_input)
+print(tokenizer.decode(output[0]))
+
+# Testing Mistral
+response = mistral_model.generate("Hello, world!")
+print(response)
+```
+
+By testing the models, you ensure that they are ready to be integrated into your larger application workflow.
+
+## Troubleshooting
+
+If you encounter issues with model installations, such as download errors or compatibility issues, consult the official documentation of Hugging Face Transformers and LangChain. You can also reach out to their respective support forums or communities for help.
+```
+
 ## Usage
 
 Once you've installed all the required software and libraries, you're ready to run the application.
