@@ -5,6 +5,8 @@ Welcome to the PDF Content Analyzer, a Python application that utilizes natural 
 
 This project leverages the LangChain framework & the built-in libraries to facilitate document loading, text processing, embedding generation, and querying capabilities as well as open-source Large Language Models for natural human like responses.
 
+The Final Poster can be found in the presentations folder along with the proposal, design, and results of this project.
+
 ## Application Architecture
 
 Below is a diagram of the application architecture, illustrating how the components interact:
@@ -193,4 +195,3 @@ This project uses several open-source packages:
 - [Hugging Face Transformers](https://huggingface.co/transformers/)
 
 Thank you to all the contributors of these projects!
-```
