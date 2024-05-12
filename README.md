@@ -15,6 +15,15 @@ Below is a diagram of the application architecture, illustrating how the compone
 
 The diagram shows the workflow from loading the PDF to extracting responses based on user queries.
 
+## Architecture Overview
+
+This application is structured into several modules, each handling a specific part of the process:
+
+- `load_pdf.py`: Manages the loading of PDF files.
+- `text_processing.py`: Handles the splitting and cleaning of text data.
+- `embeddings.py`: Responsible for generating embeddings from text.
+- `query_processing.py`: Manages the creation and processing of queries.
+- `response_handling.py`: Formats and displays responses.
 
 ## Prerequisites
 
@@ -167,16 +176,6 @@ Enter your question: What are the main topics discussed in the document?
 Processing... please wait.
 The main topics discussed are...
 ```
-
-## Architecture Overview
-
-This application is structured into several modules, each handling a specific part of the process:
-
-- `load_pdf.py`: Manages the loading of PDF files.
-- `text_processing.py`: Handles the splitting and cleaning of text data.
-- `embeddings.py`: Responsible for generating embeddings from text.
-- `query_processing.py`: Manages the creation and processing of queries.
-- `response_handling.py`: Formats and displays responses.
 
 ## Contributing
 
