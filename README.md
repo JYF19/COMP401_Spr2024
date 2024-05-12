@@ -1,6 +1,9 @@
-# LOCAL_RAG: PDF Content Analyzer
+# Local Retrieval Augmented Generation (RAG)
+# PDF Content Analyzer: Q&A system
 
-Welcome to the PDF Content Analyzer, a Python application that utilizes natural language processing to analyze and answer questions from a PDF document. This project leverages the LangChain library to facilitate document loading, text processing, embedding generation, and querying capabilities.
+Welcome to the PDF Content Analyzer, a Python application that utilizes natural language processing to analyze and answer questions from a PDF document. The project here is significantly-inspired by [Greg Kamradt](https://community.fullstackretrieval.com/)'s amazing Retrieval videos and [Tony Kipkemboi]'s (https://www.youtube.com/@tonykipkemboi) efficient implementation videos.
+
+This project leverages the LangChain framework & the built-in libraries to facilitate document loading, text processing, embedding generation, and querying capabilities as well as open-source Large Language Models for natural human like responses.
 
 ## Prerequisites
 
