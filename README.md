@@ -1,85 +1,109 @@
-# LOCAL_RAG: Q&A from a pdf file
+# LOCAL_RAG: PDF Content Analyzer
 
-This project aims to analyze the content of a pdf document using natural language processing techniques. It leverages the power of large language models (LLMs) and vector databases to enable efficient retrieval and generation of relevant information from the document.
+Welcome to the PDF Content Analyzer, a Python application that utilizes natural language processing to analyze and answer questions from a PDF document. This project leverages the LangChain library to facilitate document loading, text processing, embedding generation, and querying capabilities.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed on your machine:
+- Python 3.8 or higher
+- pip (Python package installer)
+- Git
 
 ## Installation
 
-To set up the project, follow these steps:
+Follow these steps to get your environment set up:
 
-1. Install the required libraries:
-   ```
-   !pip install unstructured langchain
-   !pip install "unstructured[all-docs]"
-   !pip install chromadb
-   !pip install langchain-text-splitters
-   ```
+### 1. Clone the Repository
 
-2. Clone the project repository:
-   ```
-   git clone https://github.com/JYF19/COMP401_Spr2024.git
-   ```
+First, clone this repository to your local machine using Git:
 
-3. Navigate to the project directory:
-   ```
-   cd yourrepository
-   ```
+```bash
+git clone https://github.com/JYF19/COMP401_Spr2024.git
+cd COMP401_Spr2024/main
+```
+
+### 2. Virtual Environment (Optional but Recommended)
+
+It's a good practice to use a virtual environment to manage dependencies. Here's how you can set it up:
+
+```bash
+# Install virtualenv if you don't have it
+pip install virtualenv
+
+# Create a virtual environment
+virtualenv venv
+
+# Activate the virtual environment
+# On Windows
+venv\Scripts\activate
+# On MacOS/Linux
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+Install the required Python libraries:
+
+```bash
+pip install unstructured langchain langchain-community chromadb langchain-text-splitters
+```
 
 ## Usage
 
-1. Place the pdf document in the project directory.
+Once you've installed all the required software and libraries, you're ready to run the application.
 
-2. Open the main script file and update the `local_path` variable with the path to your PDF file:
-   ```python
-   local_path = ""
+### Running the Application
+
+1. **Start the Application**:
+   Execute the `main.py` script from your terminal. Make sure your virtual environment is activated if you are using one.
+
+   ```bash
+   python main.py
    ```
 
-3. Run the script to process the PDF, generate embeddings, and set up the retrieval system:
-   ```
-   python Local_RAG- Q&A_from_pdf.py
-   ```
+2. **Input the PDF File Path**:
+   When prompted, enter the full path to the PDF file you wish to analyze.
 
-4. Once the setup is complete, you can enter your question when prompted:
-   ```
-   Enter your question:
-   ```
+3. **Ask a Question**:
+   After the PDF is processed, the system will prompt you to enter a question. Type your question and press Enter.
 
-5. The script will generate multiple variations of your question, retrieve relevant context from the document, and provide an answer based on the retrieved information.
+4. **Receive Your Answer**:
+   The system will process your question and return an answer based on the content of the PDF.
 
-## Project Structure
+### Example Interaction
 
-The project consists of the following main components:
+```plaintext
+Please enter the path to the PDF file you want to analyze: C:\Users\JohnDoe\Documents\example.pdf
+Enter your question: What are the main topics discussed in the document?
+Processing... please wait.
+The main topics discussed are...
+```
 
-- **Document Loading**: The script uses the `UnstructuredPDFLoader` from the `langchain_community` library to load the content of the PDF document.
+## Architecture Overview
 
-- **Text Splitting**: The loaded document is split into manageable text chunks using the `RecursiveCharacterTextSplitter` from the `langchain_text_splitters` library.
+This application is structured into several modules, each handling a specific part of the process:
 
-- **Embedding and Vector Database**: The text chunks are embedded using the `OllamaEmbeddings` model and stored in a vector database using the `Chroma` vector store from the `langchain_community` library.
+- `load_pdf.py`: Manages the loading of PDF files.
+- `text_processing.py`: Handles the splitting and cleaning of text data.
+- `embeddings.py`: Responsible for generating embeddings from text.
+- `query_processing.py`: Manages the creation and processing of queries.
+- `response_handling.py`: Formats and displays responses.
 
-- **Query Generation**: The script defines a prompt template for generating multiple variations of the user's question to improve retrieval effectiveness.
+## Contributing
 
-- **Retrieval and Answer Generation**: The `MultiQueryRetriever` is used to retrieve relevant context from the vector database based on the generated query variations. The retrieved context is then used to generate an answer using the specified LLM.
-
-- **Cleanup**: After processing the user's question, the script cleans up by deleting all collections in the vector database to avoid data clutter.
-
-## Dependencies
-
-The project relies on the following libraries:
-
-- `unstructured`: For handling unstructured data like PDFs.
-- `langchain`: For building the language model pipeline and retrieval system.
-- `chromadb`: For storing and querying embeddings in a vector database.
-- `langchain-text-splitters`: For splitting text into manageable chunks.
-- `langchain_community`: For accessing community-contributed modules and extensions.
-
-## Acknowledgements
-
-This project utilizes various open-source libraries and models, including:
-
-- Langchain: [https://github.com/hwchase17/langchain](https://github.com/hwchase17/langchain)
-- Unstructured: [https://github.com/Unstructured-IO/unstructured](https://github.com/Unstructured-IO/unstructured)
-- ChromaDB: [https://github.com/chroma-core/chroma](https://github.com/chroma-core/chroma)
-- Ollama: [https://github.com/huggingface/ollamaflower](https://github.com/huggingface/ollamaflower)
+We welcome contributions to this project! If you have suggestions or improvements, feel free to fork this repository and submit a pull request.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+This project uses several open-source packages:
+- [LangChain](https://github.com/hwchase17/langchain)
+- [Unstructured](https://github.com/Unstructured-IO/unstructured)
+- [ChromaDB](https://github.com/chroma-core/chroma)
+- [Hugging Face Transformers](https://huggingface.co/transformers/)
+
+Thank you to all the contributors of these projects!
+```
