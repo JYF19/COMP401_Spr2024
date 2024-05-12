@@ -9,7 +9,7 @@ This project leverages the LangChain framework & the built-in libraries to facil
 
 Below is a diagram of the application architecture, illustrating how the components interact:
 
-![Application Architecture Overview](images/arc_sys.png)
+![Application Architecture Overview](images/Sys_Arch.png)
 
 The diagram shows the workflow from loading the PDF to extracting responses based on user queries.
 
